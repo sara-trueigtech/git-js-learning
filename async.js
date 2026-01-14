@@ -101,7 +101,7 @@
 
 // getData();
 
-
+// async / await
 const fetchMessage = () => {
   return new Promise(resolve => {
     setTimeout(() => {
@@ -116,3 +116,20 @@ document.querySelector("#btnfetch").addEventListener("click", async () => {
   const message = await fetchMessage();
   document.querySelector("#output").textContent = message;
 });
+
+// try / catch (ERROR HANDLING)
+const fakeApi = () => {
+  return new Promise((_, reject) => {
+    setTimeout(() => reject("Server error"), 2000);
+  });
+};
+
+document.querySelector("#loadt").addEventListener("click", async () => {
+  try {
+    const data = await fakeApi();
+    document.querySelector("#msg").textContent = data;
+  } catch (error) {
+    document.querySelector("#msg").textContent = error;
+  }
+});
+
