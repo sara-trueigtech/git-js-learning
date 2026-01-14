@@ -53,3 +53,14 @@
 //   console.log(this); // button
 // });
 
+const button = document.querySelector("#btn");
+
+// normal function
+button.addEventListener("click", function () {
+  this.style.background = "red";
+});
+
+// // arrow function (won't work as expected)
+// button.addEventListener("click", () => {
+//   // this.style.background = "blue"; ❌
+// });
