@@ -133,3 +133,22 @@ document.querySelector("#loadt").addEventListener("click", async () => {
   }
 });
 
+// API CALLS
+document.querySelector("#api").addEventListener("click", async () => {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const users = await response.json();
+
+    const list = document.querySelector("#list");
+    list.innerHTML = "";
+
+    users.forEach(user => {
+      const li = document.createElement("li");
+      li.textContent = user.name;
+      list.appendChild(li);
+    });
+  } catch (error) {
+    console.log("API error", error);
+  }
+});
+
