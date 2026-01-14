@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>async</title>
-</head>
-<body>
-    <p>JavaScript is single-threaded. It can do only ONE thing at a time. If JS waited for:API responses, timers, file loading then The whole page would freeze.</p>
-    <br>
-    <p>Asynchronous JavaScript. Start a task, don’t block the main thread, handle result later.</p>
+  </head>
+  <body>
+    <p>
+      JavaScript is single-threaded. It can do only ONE thing at a time. If JS
+      waited for:API responses, timers, file loading then The whole page would
+      freeze.
+    </p>
+    <p>
+      Asynchronous JavaScript. Start a task, don’t block the main thread, handle
+      result later.
+    </p>
+    <p>set time out take 2 parameters callback function and time in milliseconds</p>
 
-    <script src="async.js">
-    </script>
-</body>
+
+    <button id="btn">Click</button>
+    <p id="text"></p>
+
+    <script src="async.js"></script>
+  </body>
 </html>
