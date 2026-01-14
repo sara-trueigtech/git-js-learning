@@ -60,3 +60,30 @@ document.querySelector("#load").addEventListener("click", () => {
       document.querySelector("#status").textContent = err;
     });
 });
+
+function fetchData() {
+  return Promise.resolve("raw data");
+}
+
+function process(data) {
+  return data.toUpperCase();
+}
+
+fetchData()
+  .then((result) => {
+    return process(result);
+  })
+  .then((final) => {
+    console.log(final);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+setTimeout(() => {
+  setTimeout(() => {
+    setTimeout(() => {
+      console.log("Done");
+    }, 1000);
+  }, 1000);
+}, 1000);
