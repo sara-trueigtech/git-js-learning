@@ -47,4 +47,10 @@ try {
   document.getElementById("msg").textContent = err.message;
 }
 
+const obj = { value: 1 };
+
+document.getElementById("change").addEventListener("click", () => {
+  obj.value = 2;
+  document.getElementById("out").textContent = obj.value;
+});
 

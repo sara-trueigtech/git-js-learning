@@ -24,11 +24,20 @@
     </p>
     <p>let and const are block-scoped, var is function-scoped.</p>
     <p>
-      const is preferred in React because it prevents reassignment and promotes predictable, immutable patterns
+      const is preferred in React because it prevents reassignment and promotes
+      predictable, immutable patterns
     </p>
-    <p>in react we have states, State updates via functions, not reassignment</p>
-    <p>The bug in var happens because var is function-scoped and creates a single shared variable, while let is block-scoped and creates a new variable for each iteration, which closures capture correctly.</p>
+    <p>
+      in react we have states, State updates via functions, not reassignment
+    </p>
+    <p>
+      The bug in var happens because var is function-scoped and creates a single
+      shared variable, while let is block-scoped and creates a new variable for
+      each iteration, which closures capture correctly.
+    </p>
     <p id="msg"></p>
+    <button id="change">Change</button>
+    <p id="out"></p>
 
     <script src="variables.js"></script>
   </body>
