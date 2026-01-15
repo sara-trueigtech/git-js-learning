@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>variables</title>
+  </head>
+  <body>
+    <p>
+      They are used to declare variables (store data). But they differ in: Scope
+      Reassignment Hoisting Safety
+    </p>
+    <p id="output"></p>
+    <p>
+      Why var is avoided in modern JS ? No block scope, Can be redeclared, Leads
+      to unpredictable bugs, Breaks large applications. React NEVER uses var
+    </p>
+    <button id="btn">Increase</button>
+    <p id="num">0</p>
+    <p>
+      const means constant reference, not constant value.Cannot reassign, But
+      mutation IS allowed. Reference same, Internal data changed. Reassignment
+      not allowed.
+    </p>
+    <p>let and const are block-scoped, var is function-scoped.</p>
+    <p>
+      const is preferred in React because it prevents reassignment and promotes predictable, immutable patterns
+    </p>
+    <p>in react we have states, State updates via functions, not reassignment</p>
+    <p>The bug in var happens because var is function-scoped and creates a single shared variable, while let is block-scoped and creates a new variable for each iteration, which closures capture correctly.</p>
+    <p id="msg"></p>
+
+    <script src="variables.js"></script>
+  </body>
+</html>
