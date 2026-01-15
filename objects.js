@@ -21,26 +21,49 @@
 //     alert(user.name);
 // });
 
-const user = {
+// const user = {
+//   name: "Sara",
+//   greet: function () {
+//     return "Hello " + this.name;
+//   },
+//   age: 21,
+// };
+
+// console.log(user.greet());
+// // this refers to the object only in normal functions, not arrow functions.
+
+// console.log(user.name, user.age); //Dot Notation (PREFERRED)
+// console.log(user["name"]); //Bracket Notation (WHEN REQUIRED)
+// const key = "name";
+// console.log(user[key]);
+
+// const student = {
+//   name: "Sara Khan",
+//   course: "CSE",
+//   cgpa: 9.1,
+// };
+
+// document.getElementById("info").textContent = student.name + " - " + student.course;
+
+let user = {
   name: "Sara",
-  greet: function () {
-    return "Hello " + this.name;
-  },
-  age: 21,
+  age: 21
 };
 
-console.log(user.greet());
-// this refers to the object only in normal functions, not arrow functions.
+document.getElementById("age").textContent = user.age;
 
-console.log(user.name, user.age); //Dot Notation (PREFERRED)
-console.log(user["name"]); //Bracket Notation (WHEN REQUIRED)
-const key = "name";
-console.log(user[key]);
+document.getElementById("update").addEventListener("click", () => {
+  user = {
+    ...user,
+    age: user.age + 1
+  };
 
-const student = {
-  name: "Sara Khan",
-  course: "CSE",
-  cgpa: 9.1,
-};
+  document.getElementById("age").textContent = user.age;
+});
 
-document.getElementById("info").textContent = student.name + " - " + student.course;
+// user.age = 22; // mutation - This changes the same object reference.
+
+// const updatedUser = {
+//   ...user,
+//   age: 22
+// }; //IMMUTABLE Object Update - Reference changes, React detects updates, Predictable behavior
