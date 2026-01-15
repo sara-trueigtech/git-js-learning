@@ -45,21 +45,21 @@
 
 // document.getElementById("info").textContent = student.name + " - " + student.course;
 
-let user = {
-  name: "Sara",
-  age: 21
-};
+// let user = {
+//   name: "Sara",
+//   age: 21
+// };
 
-document.getElementById("age").textContent = user.age;
+// document.getElementById("age").textContent = user.age;
 
-document.getElementById("update").addEventListener("click", () => {
-  user = {
-    ...user,
-    age: user.age + 1
-  };
+// document.getElementById("update").addEventListener("click", () => {
+//   user = {
+//     ...user,
+//     age: user.age + 1
+//   };
 
-  document.getElementById("age").textContent = user.age;
-});
+//   document.getElementById("age").textContent = user.age;
+// });
 
 // user.age = 22; // mutation - This changes the same object reference.
 
@@ -67,3 +67,22 @@ document.getElementById("update").addEventListener("click", () => {
 //   ...user,
 //   age: 22
 // }; //IMMUTABLE Object Update - Reference changes, React detects updates, Predictable behavior
+
+
+const user = {
+  name: "Sara",
+  age: 21
+};
+
+// const { name, age } = user;
+
+// console.log(name);
+// console.log(age);
+
+// Cleaner and avoids repeated props. or object. usage.
+function display({ name, age }) {
+  console.log(name, age);
+}
+
+display(user);
+
