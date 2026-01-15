@@ -53,3 +53,11 @@ search.addEventListener("click", () => {
   result.textContent =
     found !== undefined ? `Found: ${found}` : "Not found";
 });
+
+const arr = [1,2,3,4,5, 10];
+
+const res = arr.reduce((acc, curr) => {
+    return acc + curr;
+}, 0);
+
+console.log("reduce result : ", res);
