@@ -31,3 +31,25 @@ const eventListItems = evens.map((e) => {
   li.textContent = e;
   eventList.appendChild(li);
 });
+
+const users = [
+  { id: 1, name: "Sara" },
+  { id: 2, name: "Sneha" },
+];
+
+const user = users.find((u) => u.id === 2);
+console.log(user);
+console.log(nums.find(n => n === 15));
+
+const search = document.getElementById("search");
+const numInput = document.getElementById("numInput");
+const result = document.getElementById("result");
+
+search.addEventListener("click", () => {
+  const value = Number(numInput.value);
+
+  const found = nums.find(n => n === value);
+
+  result.textContent =
+    found !== undefined ? `Found: ${found}` : "Not found";
+});
