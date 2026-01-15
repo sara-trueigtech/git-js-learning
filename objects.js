@@ -69,20 +69,28 @@
 // }; //IMMUTABLE Object Update - Reference changes, React detects updates, Predictable behavior
 
 
-const user = {
-  name: "Sara",
-  age: 21
-};
+// const user = {
+//   name: "Sara",
+//   age: 21
+// };
 
-// const { name, age } = user;
+// // const { name, age } = user;
 
-// console.log(name);
-// console.log(age);
+// // console.log(name);
+// // console.log(age);
 
-// Cleaner and avoids repeated props. or object. usage.
-function display({ name, age }) {
-  console.log(name, age);
-}
+// // Cleaner and avoids repeated props. or object. usage.
+// function display({ name, age }) {
+//   console.log(name, age);
+// }
 
-display(user);
+// display(user);
+
+// Objects are Passed by Reference
+const obj1 = { value: 1 };
+const obj2 = obj1;
+
+obj2.value = 5;
+
+console.log(obj1.value); // 5
 

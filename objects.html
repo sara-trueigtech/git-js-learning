@@ -12,6 +12,11 @@
     <button id="update">Update Age</button>
     <p id="age"></p>
 
+    <p>WRONG (Mutation)</p>
+    <p>user.age = 22;</p>
+    <p>setUser(user);</p>
+    <p>CORRECT (Immutable) setUser({ ...user, age: 22 });</p>
+    <p>New object created Reference changes React re-renders UI</p>
     <p>Destructuring extracts values from objects into variables.</p>
     <script src="objects.js"></script>
   </body>
