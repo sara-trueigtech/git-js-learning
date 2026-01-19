@@ -81,20 +81,54 @@
 // console.log(admin.getRole());   // own method
 
 // polymorphism
+// class User {
+//   greet() {
+//     return "Hello User";
+//   }
+// }
+
+// class Admin extends User {
+//   greet() {
+//     return "Hello Admin";
+//   }
+// }
+
+// const u = new User();
+// const a = new Admin();
+
+// console.log(u.greet());
+// console.log(a.greet()); 
+
 class User {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
   greet() {
-    return "Hello User";
+    return "Hello, I am " + this.name + " " + this.age;
   }
 }
 
 class Admin extends User {
+  constructor(name, age, role) {
+    super(name, age);
+    this.role = role;
+  }
+
   greet() {
-    return "Hello Admin";
+    return "Hello, I am admin " + this.name + " " + this.age;
   }
 }
 
-const u = new User();
-const a = new Admin();
+const output = document.getElementById("output");
 
-console.log(u.greet());
-console.log(a.greet()); 
+document.getElementById("createUser").addEventListener("click", () => {
+  const user = new User("Sara", 21);
+  output.textContent = user.greet();
+});
+
+document.getElementById("createAdmin").addEventListener("click", () => {
+  const admin = new Admin("Sara", 25, "Developer");
+  output.textContent = admin.greet();
+});
