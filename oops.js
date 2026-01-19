@@ -9,24 +9,44 @@
 //  console.log(user.age);
 //  console.log(user.greet());
 
+// class User {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   greet() {
+//     return "Hello, my name is " + this.name;
+//   }
+// }
+
+// const user1 = new User("Sara", 21);
+// const user2 = new User("John", 25);
+
+
+// console.log(user1.name);
+// console.log(user2.name);
+// console.log(user1.age);
+// console.log(user2.age);
+// console.log(user1.greet());
+// console.log(user2.greet());
+
 class User {
   constructor(name, age) {
     this.name = name;
     this.age = age;
   }
 
-  greet() {
-    return "Hello, my name is " + this.name;
+  updateAge(newAge) {
+    if (newAge > 0) {
+      this.age = newAge;
+    }
   }
 }
 
-const user1 = new User("Sara", 21);
-const user2 = new User("John", 25);
+const u = new User("sara", 21);
+console.log(u.name);
+console.log(u.age);
 
-
-console.log(user1.name);
-console.log(user2.name);
-console.log(user1.age);
-console.log(user2.age);
-console.log(user1.greet());
-console.log(user2.greet());
+u.updateAge(25);
+console.log("updated age", u.age);
