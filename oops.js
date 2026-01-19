@@ -54,28 +54,47 @@
 // console.log("updated age", u.age);
 
 // inheritance
-class User {
-  constructor(name) {
-    this.name = name;
-  }
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
 
+//   greet() {
+//     return "Hello " + this.name;
+//   }
+// }
+
+// class Admin extends User {
+//   constructor(name, role) {
+//     super(name);
+//     this.role = role;
+//   }
+
+//   getRole() {
+//     return this.role;
+//   }
+// }
+
+// const admin = new Admin("Sara", "Developer");
+// const user = new User("Sara", "Developer");
+// console.log(admin.greet());    // inherited
+// console.log(admin.getRole());   // own method
+
+// polymorphism
+class User {
   greet() {
-    return "Hello " + this.name;
+    return "Hello User";
   }
 }
 
 class Admin extends User {
-  constructor(name, role) {
-    super(name);
-    this.role = role;
-  }
-
-  getRole() {
-    return this.role;
+  greet() {
+    return "Hello Admin";
   }
 }
 
-const admin = new Admin("Sara", "Developer");
-const user = new User("Sara", "Developer");
-console.log(admin.greet());    // inherited
-console.log(admin.getRole());   // own method
+const u = new User();
+const a = new Admin();
+
+console.log(u.greet());
+console.log(a.greet()); 
