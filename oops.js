@@ -1,3 +1,4 @@
+// objects and classes
 // const user = {
 //   name: "Sara",
 //   age: 21,
@@ -31,22 +32,50 @@
 // console.log(user1.greet());
 // console.log(user2.greet());
 
+// encapsulation
+// class User {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   updateAge(newAge) {
+//     if (newAge > 0) {
+//       this.age = newAge;
+//     }
+//   }
+// }
+
+// const u = new User("sara", 21);
+// console.log(u.name);
+// console.log(u.age);
+
+// u.updateAge(25);
+// console.log("updated age", u.age);
+
+// inheritance
 class User {
-  constructor(name, age) {
+  constructor(name) {
     this.name = name;
-    this.age = age;
   }
 
-  updateAge(newAge) {
-    if (newAge > 0) {
-      this.age = newAge;
-    }
+  greet() {
+    return "Hello " + this.name;
   }
 }
 
-const u = new User("sara", 21);
-console.log(u.name);
-console.log(u.age);
+class Admin extends User {
+  constructor(name, role) {
+    super(name);
+    this.role = role;
+  }
 
-u.updateAge(25);
-console.log("updated age", u.age);
+  getRole() {
+    return this.role;
+  }
+}
+
+const admin = new Admin("Sara", "Developer");
+const user = new User("Sara", "Developer");
+console.log(admin.greet());    // inherited
+console.log(admin.getRole());   // own method
